@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-            $user = User::findOrFail($id);
+        $user = User::findOrFail($id);
         return $user->Load("userNotes");
     }
 

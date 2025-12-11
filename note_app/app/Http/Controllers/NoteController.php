@@ -40,7 +40,10 @@ class NoteController extends Controller
     public function show(string $id)
     {
         $note = Note::findOrFail($id);
-        return $note->Load("subNotes");
+        // return $note->Load("subNotes");
+        return $note->Load(["subNotes", "noteComments"]);
+
+        
     }
 
     /**
